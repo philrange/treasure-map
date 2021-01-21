@@ -48,7 +48,7 @@ function addClues() {
         clueDiv.text("? " + location.id);
         clueDiv.click(function() {toggleLocation(location.id, location.name, location.image, this); })
         console.log("xy " +location.x + " " + location.y);
-        clueDiv.css({"position": "relative", "top" : location.y, "left" : location.x });
+        clueDiv.css({"position": "absolute", "top" : location.y + "px", "left" : location.x + "px"});
         console.log(clueDiv.css("top"));
         var cc = $("#clues-container");
         cc.append(clueDiv);
