@@ -62,14 +62,20 @@ function addClues() {
         var clicked = e.text().indexOf(locationName) >= 0;
         e.empty();
 
-        if (clicked) {
-            e.text("? " + id);
+
+
+    var span = $('<span>');
+     if (clicked) {
+           
+            span.addClass("questionmark");
+            span.text("? " + id);
         } else {
             e.append($('<img>',{src:image}));
-            var span = $('<span>');
+            span.addClass("name");
             span.text(locationName);
-            e.append(span);
         }
+  e.append(span);
+
 
     }
 
@@ -97,12 +103,17 @@ background-repeat:no-repeat;
         #clues-container {
             width: 100%;
             height: 100%;
+padding: 0;
         }
 
         .clue {
             height: 100px;
             width: 100px;
         }
+.name {
+ font-size: large;
+}
+
     </style>
 
 
@@ -116,7 +127,7 @@ background-repeat:no-repeat;
 
 <div class="map">
     <div id="clues-container">
-sfgfgf
+
     </div>
 
 </div>
